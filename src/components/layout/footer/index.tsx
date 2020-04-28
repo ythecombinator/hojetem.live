@@ -2,6 +2,8 @@ import {Box, Container, Grid, Link, Typography} from '@material-ui/core';
 import {Facebook as FacebookIcon, Twitter as TwitterIcon} from '@material-ui/icons';
 import NextLink from 'next/link';
 
+import {messages} from 'config/constants';
+
 import {useStyles} from './styles';
 
 const Footer = () => {
@@ -10,7 +12,7 @@ const Footer = () => {
     <Container className={classes.container} component="footer">
       <Typography variant="caption" color="textSecondary">
         <Grid container spacing={2} justify="center" alignItems="center">
-          <Grid item>&copy; Hoje Tem Live!, all rights reserved.</Grid>
+          <Grid item>{messages.copyright}</Grid>
           <Grid item>
             <Box display="flex" alignItems="center">
               <TwitterIcon fontSize="small" />

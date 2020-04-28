@@ -21,3 +21,11 @@ export const endpoints = {
 export const routes = {
   home: "/",
 };
+
+export const messages = {
+  play: "Assistir",
+  allGenres: "Todos os Gêneros",
+  highlightedGenres: "Em destaque",
+  otherGenres: "Outros gêneros",
+  copyright: "Hoje Tem Live © 2020.",
+};

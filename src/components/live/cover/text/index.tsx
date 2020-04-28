@@ -6,6 +6,8 @@ import LinkPrefetch from 'components/link-prefetch';
 
 import {Live} from 'schemas/api';
 
+import {messages} from 'config/constants';
+
 import {useStyles} from './styles';
 
 interface Props {
@@ -68,7 +70,7 @@ const LiveCoverText = (props: Props) => {
         onClick={handlePlay}
         startIcon={<PlayIcon />}
       >
-        Play
+        {messages.play}
       </Button>
     </div>
   );

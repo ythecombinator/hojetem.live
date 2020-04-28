@@ -3,7 +3,7 @@ import {useState} from 'react';
 import {Button, ListItemIcon, ListItemText, Menu, MenuItem} from '@material-ui/core';
 import {ArrowDropDown as GenresButtonIcon} from '@material-ui/icons/';
 
-import {genres} from 'config/constants';
+import {genres, messages} from 'config/constants';
 
 import {useStyles} from './styles';
 
@@ -36,7 +36,7 @@ const GenresMenu = () => {
         className={classes.genresButton}
         endIcon={<GenresButtonIcon />}
       >
-        Genres
+        {messages.allGenres}
       </Button>
       <Menu
         id="customized-menu"

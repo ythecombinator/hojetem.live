@@ -11,7 +11,7 @@ import {
 
 import {Genre} from 'schemas/api';
 
-import {genres} from 'config/constants';
+import {genres, messages} from 'config/constants';
 
 import {useStyles} from './styles';
 
@@ -68,7 +68,7 @@ const Sidebar = (props: Props) => {
               id="genre-list-subheader-genres"
               className={classes.subheader}
             >
-              Genres
+              {messages.highlightedGenres}
             </ListSubheader>
           }
         >
@@ -86,7 +86,7 @@ const Sidebar = (props: Props) => {
               id="genre-list-subheader-more-genres"
               className={classes.subheader}
             >
-              More Genres
+              {messages.otherGenres}
             </ListSubheader>
           }
         >
