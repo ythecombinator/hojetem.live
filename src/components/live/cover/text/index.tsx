@@ -4,6 +4,8 @@ import Router from 'next/router';
 
 import LinkPrefetch from 'components/link-prefetch';
 
+import {formatDate} from 'utils/date';
+
 import {Live} from 'schemas/api';
 
 import {messages} from 'config/constants';
@@ -26,6 +28,8 @@ const LiveCoverText = (props: Props) => {
   const handlePlay = () => {
     Router.push(`/live/[liveid]`, `/live/${live.id}`);
   };
+
+  const date = formatDate(live.datetime);
 
   return (
     <div className={classes.text}>
@@ -59,7 +63,7 @@ const LiveCoverText = (props: Props) => {
         className={classes.description}
         color={shouldLinkTitle ? "textPrimary" : "textSecondary"}
       >
-        {live.artists.map((artist) => artist)}
+        📅 {date}
       </Typography>
       <Button
         size="large"

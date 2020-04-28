@@ -4,9 +4,5 @@ import 'dayjs/locale/pt';
 dayjs.locale("pt");
 
 export const formatDate = (str: string) => {
-  return dayjs(str).format("dddd, D MMMM");
-};
-
-export const formatTime = (str: string) => {
-  return dayjs(str).format("H:mm");
+  return dayjs(str).format("dddd, D [de] MMMM [às] HH:mm");
 };

@@ -5,35 +5,35 @@ const theme = responsiveFontSizes(
     palette: {
       type: "dark",
       primary: {
-        main: "#FF0000"
+        main: "#29339B",
       },
       secondary: {
-        main: "#29339B"
+        main: "#FF0000",
       },
       background: {
         paper: "#191919",
-        default: "#121212"
-      }
+        default: "#121212",
+      },
     },
     overrides: {
       MuiCardHeader: {
         title: {
-          fontSize: "16px"
+          fontSize: "16px",
         },
         subheader: {
-          fontSize: "14px"
-        }
-      }
+          fontSize: "14px",
+        },
+      },
     },
     props: {
       MuiTab: {
         style: {
-          minWidth: "50px"
-        }
+          minWidth: "50px",
+        },
       },
       MuiTextField: {
-        variant: "outlined"
-      }
+        variant: "outlined",
+      },
     },
     typography: {
       fontFamily:
@@ -42,15 +42,15 @@ const theme = responsiveFontSizes(
       h2: { fontWeight: 800 },
       h3: { fontWeight: 800 },
       h4: {
-        fontWeight: 700
+        fontWeight: 700,
       },
       h5: {
-        fontWeight: 700
+        fontWeight: 700,
       },
       h6: {
-        fontWeight: 700
-      }
-    }
+        fontWeight: 700,
+      },
+    },
   })
 );
 

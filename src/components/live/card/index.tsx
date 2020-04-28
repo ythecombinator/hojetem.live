@@ -10,7 +10,7 @@ import {
 
 import LinkPrefetch from 'components/link-prefetch';
 
-import {formatDate, formatTime} from 'utils/date';
+import {formatDate} from 'utils/date';
 
 import {Live} from 'schemas/api';
 
@@ -61,7 +61,6 @@ const LiveCardInfo = (props: Props) => {
 
   const artist = live.artists[0];
   const date = formatDate(live.datetime);
-  const time = formatTime(live.datetime);
 
   return (
     <Box className="description">
@@ -72,9 +71,6 @@ const LiveCardInfo = (props: Props) => {
           </Typography>
           <Typography className={classes.details} variant="body2">
             📅 {date}
-          </Typography>
-          <Typography className={classes.details} variant="body2">
-            🕒 {time}
           </Typography>
         </Box>
       </Paper>
