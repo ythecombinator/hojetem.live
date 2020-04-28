@@ -1,21 +1,25 @@
-import Link from 'next/link';
+import {NextPage} from 'next';
+
+import Hub from 'components/hub';
+import Main from 'components/layout/main';
+
+import {Genre, LivesHub} from 'schemas/api';
 
 import {getGenres} from 'services/genres';
 import {getLivesHub} from 'services/lives';
 
-import Layout from '../components/Layout';
+interface Props {
+  livesHub: LivesHub;
+  genresList: Genre[];
+}
 
-const IndexPage = (props: any) => {
-  console.log(props);
+const Home: NextPage<Props> = (props) => {
+  const { livesHub, genresList } = props;
+
   return (
-    <Layout title="Home | Next.js + TypeScript Example">
-      <h1>Hello Next.js 👋</h1>
-      <p>
-        <Link href="/about">
-          <a>About</a>
-        </Link>
-      </p>
-    </Layout>
+    <Main>
+      <Hub livesHub={livesHub} genresList={genresList} />
+    </Main>
   );
 };
 
@@ -26,4 +30,4 @@ export async function getServerSideProps() {
   return { props: { livesHub, genresList } };
 }
 
-export default IndexPage;
+export default Home;

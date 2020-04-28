@@ -17,3 +17,7 @@ export const endpoints = {
   base: "https://lives.mus.br",
   api: "https://api.lives.mus.br/lives",
 };
+
+export const routes = {
+  home: "/",
+};
