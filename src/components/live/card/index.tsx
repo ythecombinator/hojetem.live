@@ -53,11 +53,18 @@ const LiveCardMedia = (props: Props) => {
 
 const LiveCardInfo = (props: Props) => {
   const { live } = props;
+
+  const artist = live.artists[0];
+  const date = new Date(live.datetime).toLocaleDateString("pt");
+  const time = new Date(live.datetime).toLocaleTimeString("pt");
+
+  const description = `${artist} • ${date} • ${time}`;
+
   return (
     <Box className="description">
       <Paper>
         <Box padding={1}>
-          <Typography variant="body2">{live.datetime}</Typography>
+          <Typography variant="body2">{description}</Typography>
         </Box>
       </Paper>
     </Box>
