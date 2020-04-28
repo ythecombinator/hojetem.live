@@ -1,9 +1,7 @@
 import {useEffect, useState} from 'react';
 
-import {Grid, Link} from '@material-ui/core';
-import {ChevronRight as TitleLinkIcon} from '@material-ui/icons';
+import {Grid, Typography} from '@material-ui/core';
 
-import LinkPrefetch from 'components/link-prefetch';
 import LiveCard from 'components/live/card';
 
 import {Live} from 'schemas/api';
@@ -24,13 +22,10 @@ const LiveGroupTitle = (props: Props) => {
   const classes = useStyles({});
 
   return (
-    <LinkPrefetch href="/genre/[topicid]" as={`/genre/${slug}`} passHref>
-      <Link color="inherit" className={classes.groupTitle} variant="h4">
-        <img src={`/genres/${slug}.svg`} className={classes.groupIcon} alt="" />
-        {title}
-        <TitleLinkIcon fontSize="large" />
-      </Link>
-    </LinkPrefetch>
+    <Typography color="inherit" className={classes.groupTitle} variant="h4">
+      <img src={`/genres/${slug}.svg`} className={classes.groupIcon} alt="" />
+      {title}
+    </Typography>
   );
 };
 
