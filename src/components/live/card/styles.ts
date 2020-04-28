@@ -9,15 +9,15 @@ export const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: "transparent",
       "&:hover": {
         "& .controls": {
-          opacity: 1
+          opacity: 1,
         },
         "& .description": {
-          opacity: 1
-        }
-      }
+          opacity: 1,
+        },
+      },
     },
     header: {
-      padding: theme.spacing(1, 0, 0, 0)
+      padding: theme.spacing(1, 0, 0, 0),
     },
     headerTitle: {
       position: "relative",
@@ -33,12 +33,15 @@ export const useStyles = makeStyles((theme: Theme) =>
         width: "100%",
         height: "100%",
         textAlign: "center",
-        transition: theme.transitions.create("opacity")
-      }
+        transition: theme.transitions.create("opacity"),
+      },
     },
     link: {
       textDecoration: "none",
-      color: "inherit"
+      color: "inherit",
+    },
+    details: {
+      padding: theme.spacing(1, 0, 1, 0),
     },
     media: {
       paddingBottom: "56.25%" /* 16:9 aspect ratio */,
@@ -48,8 +51,8 @@ export const useStyles = makeStyles((theme: Theme) =>
       "& .description": {
         height: "100%",
         opacity: 0,
-        transition: theme.transitions.create("opacity")
-      }
-    }
+        transition: theme.transitions.create("opacity"),
+      },
+    },
   })
 );

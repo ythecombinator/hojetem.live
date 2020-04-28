@@ -10,6 +10,8 @@ import {
 
 import LinkPrefetch from 'components/link-prefetch';
 
+import {formatDate, formatTime} from 'utils/date';
+
 import {Live} from 'schemas/api';
 
 import {useStyles} from './styles';
@@ -24,6 +26,7 @@ const LiveCardHeader = (props: Props) => {
   const { live } = props;
 
   const classes = useStyles({});
+
   return (
     <CardHeader
       title={live.title}
@@ -54,17 +57,25 @@ const LiveCardMedia = (props: Props) => {
 const LiveCardInfo = (props: Props) => {
   const { live } = props;
 
-  const artist = live.artists[0];
-  const date = new Date(live.datetime).toLocaleDateString("pt");
-  const time = new Date(live.datetime).toLocaleTimeString("pt");
+  const classes = useStyles({});
 
-  const description = `${artist} • ${date} • ${time}`;
+  const artist = live.artists[0];
+  const date = formatDate(live.datetime);
+  const time = formatTime(live.datetime);
 
   return (
     <Box className="description">
       <Paper>
         <Box padding={1}>
-          <Typography variant="body2">{description}</Typography>
+          <Typography className={classes.details} variant="body2">
+            🎤 {artist}
+          </Typography>
+          <Typography className={classes.details} variant="body2">
+            📅 {date}
+          </Typography>
+          <Typography className={classes.details} variant="body2">
+            🕒 {time}
+          </Typography>
         </Box>
       </Paper>
     </Box>
