@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@types/node": "^12.12.21",
+    "@types/nprogress": "^0.2.0",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
     "typescript": "3.7.3"
