@@ -95,7 +95,6 @@ const Header = () => {
           <Divider orientation="vertical" className={classes.headerDivider} />
           <FeaturedGenres />
           <GenresMenu />
-          <Divider orientation="vertical" className={classes.headerDivider} />
           {/* <SearchInput className={classes.search} /> */}
         </Toolbar>
       </Hidden>
@@ -110,7 +109,7 @@ const FeaturedGenres = () => {
   const classes = useStyles({});
 
   const theme = useTheme();
-  const visibleGenres = useMediaQuery(theme.breakpoints.up("xl")) ? 4 : 3;
+  const visibleGenres = useMediaQuery(theme.breakpoints.up("xl")) ? 6 : 5;
 
   return (
     <>
