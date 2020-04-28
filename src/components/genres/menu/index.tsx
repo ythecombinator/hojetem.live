@@ -1,7 +1,9 @@
-import {useState} from 'react';
+import {useCallback, useState} from 'react';
 
 import {Button, ListItemIcon, ListItemText, Menu, MenuItem} from '@material-ui/core';
 import {ArrowDropDown as GenresButtonIcon} from '@material-ui/icons/';
+
+import {useSmoothScroll} from 'utils/dom';
 
 import {genres, messages} from 'config/constants';
 
@@ -10,6 +12,7 @@ import {useStyles} from './styles';
 const GenresMenu = () => {
   const classes = useStyles({});
 
+  const { scrollTo } = useSmoothScroll();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const onMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -20,10 +23,13 @@ const GenresMenu = () => {
     setAnchorEl(null);
   };
 
-  const onMenuItemClick = (genreId: string) => {
-    document.getElementById(genreId)!.scrollIntoView();
-    setAnchorEl(null);
-  };
+  const onMenuItemClick = useCallback(
+    (genreId: string) => () => {
+      scrollTo(genreId);
+      setAnchorEl(null);
+    },
+    []
+  );
 
   return (
     <div>

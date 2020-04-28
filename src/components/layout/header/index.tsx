@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useCallback, useState} from 'react';
 
 import {
   AppBar,
@@ -8,6 +8,7 @@ import {
   Hidden,
   IconButton,
   Toolbar,
+  Typography,
   useMediaQuery,
   useTheme,
 } from '@material-ui/core';
@@ -17,6 +18,8 @@ import {Menu as MenuIcon} from '@material-ui/icons/';
 import GenresMenu from 'components/genres/menu';
 import Sidebar from 'components/layout/sidebar';
 import LinkPrefetch from 'components/link-prefetch';
+
+import {useSmoothScroll} from 'utils/dom';
 
 import {genres, routes} from 'config/constants';
 
@@ -109,7 +112,15 @@ const FeaturedGenres = () => {
   const classes = useStyles({});
 
   const theme = useTheme();
+  const { scrollTo } = useSmoothScroll();
   const visibleGenres = useMediaQuery(theme.breakpoints.up("xl")) ? 6 : 5;
+
+  const onMenuItemClick = useCallback(
+    (genreId: string) => () => {
+      scrollTo(genreId);
+    },
+    []
+  );
 
   return (
     <>
@@ -117,11 +128,11 @@ const FeaturedGenres = () => {
         .filter((genre) => genre.featured)
         .slice(0, visibleGenres)
         .map((genre) => (
-          <a
+          <Typography
             title={genre.title}
-            href={`#${genre.id}`}
             key={genre.id}
             className={classes.headerLink}
+            onClick={onMenuItemClick(genre.id)}
           >
             <img
               src={`/genres/${genre.id}.svg`}
@@ -129,7 +140,7 @@ const FeaturedGenres = () => {
               alt=""
             />
             <span className={classes.headerLinkGenreLabel}>{genre.title}</span>
-          </a>
+          </Typography>
         ))}
     </>
   );

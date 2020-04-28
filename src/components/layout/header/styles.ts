@@ -26,6 +26,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       textTransform: "none",
       whiteSpace: "nowrap",
       fontWeight: "bold",
+      cursor: "pointer",
       "&:hover": {
         borderColor: theme.palette.divider,
       },

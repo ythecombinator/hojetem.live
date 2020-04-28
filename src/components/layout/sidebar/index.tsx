@@ -1,3 +1,5 @@
+import {useCallback} from 'react';
+
 import {
   Divider,
   Icon,
@@ -8,6 +10,8 @@ import {
   ListSubheader,
   Paper,
 } from '@material-ui/core';
+
+import {useSmoothScroll} from 'utils/dom';
 
 import {Genre} from 'schemas/api';
 
@@ -25,25 +29,35 @@ const GenreLink = (props: GenreLinkProps) => {
   const { genre } = props;
 
   const classes = useStyles({});
+  const { scrollTo } = useSmoothScroll();
+
+  const onMenuItemClick = useCallback(
+    (genreId: string) => () => {
+      scrollTo(genreId);
+    },
+    []
+  );
 
   return (
-    <a className={classes.link} href={`#${genre.id}`} key={genre.id}>
-      <ListItem button>
-        <ListItemIcon>
-          <Icon>
-            <img
-              src={`/genres/${genre.id}.svg`}
-              style={{
-                display: "block",
-                height: "100%",
-                width: "100%",
-              }}
-            />
-          </Icon>
-        </ListItemIcon>
-        <ListItemText primary={`${genre.title}`} />
-      </ListItem>
-    </a>
+    <ListItem
+      className={classes.link}
+      onClick={onMenuItemClick(genre.id)}
+      button
+    >
+      <ListItemIcon>
+        <Icon>
+          <img
+            src={`/genres/${genre.id}.svg`}
+            style={{
+              display: "block",
+              height: "100%",
+              width: "100%",
+            }}
+          />
+        </Icon>
+      </ListItemIcon>
+      <ListItemText primary={`${genre.title}`} />
+    </ListItem>
   );
 };
 
