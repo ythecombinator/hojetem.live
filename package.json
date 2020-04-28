@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.9.12",
+    "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "^4.9.10",
     "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-css": "^1.0.1",
