@@ -1,5 +1,6 @@
 import Head from 'next/head';
 
+import Footer from 'components/layout/footer';
 import Header from 'components/layout/header';
 
 import {useStyles} from './styles';
@@ -52,6 +53,7 @@ const Layout = (props: Props) => {
       </Head>
       <Header />
       <main className={classes.main}>{children}</main>
+      <Footer />
     </>
   );
 };
