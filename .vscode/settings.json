@@ -1,0 +1,61 @@
+{
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/dist": true
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/dist": true
+  },
+  "editor.formatOnSave": true,
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "newLineEachExpressionAfterCountLimit",
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 100,
+  "importSorter.importStringConfiguration.tabSize": 2,
+  "importSorter.importStringConfiguration.trailingComma": "multiLine",
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "importSorter.sortConfiguration.customOrderingRules.defaultOrderLevel": 15,
+  "importSorter.sortConfiguration.customOrderingRules.rules": [
+    {
+      "regex": "^(react)$",
+      "orderLevel": 10
+    },
+    {
+      "regex": "^(components)",
+      "orderLevel": 20
+    },
+    {
+      "regex": "^(hooks)",
+      "orderLevel": 30
+    },
+    {
+      "regex": "^(utils)",
+      "orderLevel": 40
+    },
+    {
+      "regex": "^(schemas)",
+      "orderLevel": 50
+    },
+    {
+      "regex": "^(services)",
+      "orderLevel": 60
+    },
+    {
+      "regex": "^(styles)",
+      "orderLevel": 70
+    },
+    {
+      "regex": "^(config)",
+      "orderLevel": 80
+    },
+    {
+      "regex": "^[.]",
+      "orderLevel": 90
+    }
+  ],
+  "importSorter.importStringConfiguration.spacingPerImportExpression.afterStartingBracket": 0,
+  "importSorter.importStringConfiguration.spacingPerImportExpression.beforeEndingBracket": 0,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": false,
+  "importSorter.sortConfiguration.joinImportPaths": false
+}
