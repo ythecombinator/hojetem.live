@@ -2,13 +2,13 @@ export interface Live {
   id: number;
   title: string;
   datetime: string;
-  genres?: Genre[];
-  artists?: string[];
+  genres: Genre[];
+  artists: string[];
   banner: string;
   active: boolean;
-  youtubeVideo?: string;
-  youtubeChannel?: string;
-  instagram?: string;
+  youtubeVideo: string;
+  youtubeChannel: string;
+  instagram: string;
 }
 
 export interface Genre {

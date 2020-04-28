@@ -1,19 +1,18 @@
 export interface Event {
   id: number;
-  uid?: null;
   title: string;
   datetime: string;
-  artists?: string;
-  youtube_video?: string;
-  youtube_channel?: string;
-  instagram?: string;
+  artists: string;
+  youtube_video: string;
+  youtube_channel: string;
+  instagram: string;
   banner: string;
   active: boolean;
   created_at: string;
   updated_at: string;
-  facebook?: null;
-  order?: number;
-  categories?: Category[];
+  facebook: null;
+  order: number;
+  categories: Category[];
 }
 
 export interface Category {
