@@ -9,12 +9,11 @@ interface Props {
   children: any;
   title?: string;
   description?: string;
-  keywords?: string;
   image?: string;
 }
 
 const Layout = (props: Props) => {
-  const { children, title, description, keywords, image } = props;
+  const { children, title, description, image } = props;
 
   const classes = useStyles({});
 
@@ -25,7 +24,6 @@ const Layout = (props: Props) => {
       <Head>
         <title>{headTitle}</title>
         <meta name="description" content={description} />
-        <meta name="keywords" content={`React,ReactJS,${keywords}`} />
         <meta property="og:title" content={headTitle} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
