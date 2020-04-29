@@ -50,3 +50,13 @@ export const getLivesHub = async () => {
 
   return lives;
 };
+
+export const getLive = async (liveId: string) => {
+  const id = Number(liveId);
+
+  const allLives = await getBaseData();
+
+  const live = allLives.find((item) => item.id === id);
+
+  return live;
+};
