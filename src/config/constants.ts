@@ -18,6 +18,11 @@ export const endpoints = {
   api: "https://api.lives.mus.br/lives",
 };
 
+export const sizes = {
+  appBarHeight: "65px",
+  livePagePrimaryContentHeight: "175px",
+};
+
 export const routes = {
   home: "/",
 };
