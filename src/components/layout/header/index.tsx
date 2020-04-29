@@ -2,7 +2,6 @@ import {useCallback, useState} from 'react';
 
 import {
   AppBar,
-  Box,
   Divider,
   Drawer,
   Hidden,
@@ -14,12 +13,11 @@ import {
 } from '@material-ui/core';
 import {Menu as MenuIcon} from '@material-ui/icons/';
 
-// import SearchInput from 'components/search-input';
 import GenresMenu from 'components/genres/menu';
 import Sidebar from 'components/layout/sidebar';
 import LinkPrefetch from 'components/link-prefetch';
 
-import {useSmoothScroll} from 'utils/dom';
+import {useNavigation} from 'utils/navigation';
 
 import {genres, routes} from 'config/constants';
 
@@ -61,9 +59,6 @@ const Header = () => {
             <Divider orientation="vertical" className={classes.headerDivider} />
           </>
         )}
-        <Box flexGrow="1" paddingRight={2}>
-          {/* <SearchInput className={classes.search} /> */}
-        </Box>
         <LinkPrefetch href={routes.home} as={routes.home}>
           <a className={`${classes.headerLink}`}>
             <img src="/logo.svg" className={classes.logo} />
@@ -98,7 +93,6 @@ const Header = () => {
           <Divider orientation="vertical" className={classes.headerDivider} />
           <FeaturedGenres />
           <GenresMenu />
-          {/* <SearchInput className={classes.search} /> */}
         </Toolbar>
       </Hidden>
       <Hidden implementation="css" mdUp>
@@ -111,22 +105,19 @@ const Header = () => {
 const FeaturedGenres = () => {
   const classes = useStyles({});
 
-  const theme = useTheme();
-  const { scrollTo } = useSmoothScroll();
-  const visibleGenres = useMediaQuery(theme.breakpoints.up("xl")) ? 6 : 5;
+  const { navigateToGenre } = useNavigation();
 
   const onMenuItemClick = useCallback(
     (genreId: string) => () => {
-      scrollTo(genreId);
+      navigateToGenre(genreId);
     },
-    []
+    [navigateToGenre]
   );
 
   return (
     <>
       {genres
         .filter((genre) => genre.featured)
-        .slice(0, visibleGenres)
         .map((genre) => (
           <Typography
             title={genre.title}

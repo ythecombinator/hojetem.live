@@ -11,7 +11,7 @@ import {
   Paper,
 } from '@material-ui/core';
 
-import {useSmoothScroll} from 'utils/dom';
+import {useNavigation} from 'utils/navigation';
 
 import {Genre} from 'schemas/api';
 
@@ -29,13 +29,13 @@ const GenreLink = (props: GenreLinkProps) => {
   const { genre } = props;
 
   const classes = useStyles({});
-  const { scrollTo } = useSmoothScroll();
+  const { navigateToGenre } = useNavigation();
 
   const onMenuItemClick = useCallback(
     (genreId: string) => () => {
-      scrollTo(genreId);
+      navigateToGenre(genreId);
     },
-    []
+    [navigateToGenre]
   );
 
   return (

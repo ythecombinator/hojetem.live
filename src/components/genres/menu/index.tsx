@@ -3,7 +3,7 @@ import {useCallback, useState} from 'react';
 import {Button, ListItemIcon, ListItemText, Menu, MenuItem} from '@material-ui/core';
 import {ArrowDropDown as GenresButtonIcon} from '@material-ui/icons/';
 
-import {useSmoothScroll} from 'utils/dom';
+import {useNavigation} from 'utils/navigation';
 
 import {genres, messages} from 'config/constants';
 
@@ -12,7 +12,7 @@ import {useStyles} from './styles';
 const GenresMenu = () => {
   const classes = useStyles({});
 
-  const { scrollTo } = useSmoothScroll();
+  const { navigateToGenre } = useNavigation();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const onMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -25,10 +25,10 @@ const GenresMenu = () => {
 
   const onMenuItemClick = useCallback(
     (genreId: string) => () => {
-      scrollTo(genreId);
+      navigateToGenre(genreId);
       setAnchorEl(null);
     },
-    []
+    [navigateToGenre]
   );
 
   return (
@@ -62,7 +62,7 @@ const GenresMenu = () => {
         }}
       >
         {genres.map((genre) => (
-          <MenuItem key={genre.id} onClick={(_) => onMenuItemClick(genre.id)}>
+          <MenuItem key={genre.id} onClick={onMenuItemClick(genre.id)}>
             <ListItemIcon>
               <img
                 src={`/genres/${genre.id}.svg`}
