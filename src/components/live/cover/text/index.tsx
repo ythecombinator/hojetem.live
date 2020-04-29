@@ -1,6 +1,5 @@
 import {Box, Button, Link, Typography} from '@material-ui/core';
 import {PlayArrowSharp as PlayIcon} from '@material-ui/icons';
-import Router from 'next/router';
 
 import LinkPrefetch from 'components/link-prefetch';
 
@@ -18,16 +17,20 @@ interface Props {
   shouldLinkTitle?: boolean;
   title?: string;
   live: Live;
+  handlePlay: (liveId: number) => () => void;
 }
 
 const LiveCoverText = (props: Props) => {
-  const { color, logo, shouldLinkTitle = true, live, title } = props;
+  const {
+    color,
+    logo,
+    shouldLinkTitle = true,
+    live,
+    title,
+    handlePlay,
+  } = props;
 
   const classes = useStyles({});
-
-  const handlePlay = () => {
-    Router.push(`/live/[liveid]`, `/live/${live.id}`);
-  };
 
   const date = formatDate(live.datetime);
 
@@ -71,7 +74,7 @@ const LiveCoverText = (props: Props) => {
         variant="contained"
         className={classes.button}
         classes={{ iconSizeLarge: classes.buttonIcon }}
-        onClick={handlePlay}
+        onClick={handlePlay(live.id)}
         startIcon={<PlayIcon />}
       >
         {messages.play}
