@@ -38,7 +38,7 @@ const transformResponse = (rawResponse: Event[]) => {
       title,
       datetime,
       genres: categories.map(mapCategories),
-      artists: [artists],
+      artists,
       banner,
       active,
       youtubeVideo: youtube_video,

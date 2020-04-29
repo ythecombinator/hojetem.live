@@ -36,7 +36,7 @@ const HubSectionDividerText = (props: Props) => {
         </Link>
       </LinkPrefetch>
       <Typography variant="h5" className={classes.description}>
-        {live.artists[0]}
+        {live.artists}
       </Typography>
       <Button
         size="large"

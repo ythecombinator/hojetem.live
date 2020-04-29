@@ -59,7 +59,7 @@ const LiveCardInfo = (props: Props) => {
 
   const classes = useStyles({});
 
-  const artist = live.artists[0];
+  const artist = live.artists;
   const date = formatDate(live.datetime);
 
   return (

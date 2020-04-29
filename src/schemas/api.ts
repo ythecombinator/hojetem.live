@@ -3,7 +3,7 @@ export interface Live {
   title: string;
   datetime: string;
   genres: Genre[];
-  artists: string[];
+  artists: string;
   banner: string;
   active: boolean;
   youtubeVideo: string;
