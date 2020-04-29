@@ -1,8 +1,8 @@
 import {Box, Container, Grid, Link, Typography} from '@material-ui/core';
-import {Facebook as FacebookIcon, Twitter as TwitterIcon} from '@material-ui/icons';
+import {Instagram as InstagramIcon, Twitter as TwitterIcon} from '@material-ui/icons';
 import NextLink from 'next/link';
 
-import {messages} from 'config/constants';
+import {messages, socialNetworks} from 'config/constants';
 
 import {useStyles} from './styles';
 
@@ -18,7 +18,7 @@ const Footer = () => {
               <TwitterIcon fontSize="small" />
               &nbsp;
               <NextLink
-                href="https://twitter.com/Hero35Official"
+                href={`https://twitter.com/${socialNetworks.twitter}`}
                 passHref
                 prefetch={false}
               >
@@ -30,15 +30,15 @@ const Footer = () => {
           </Grid>
           <Grid item>
             <Box display="flex" alignItems="center">
-              <FacebookIcon fontSize="small" />
+              <InstagramIcon fontSize="small" />
               &nbsp;
               <NextLink
-                href="https://www.facebook.com/hero35official/"
+                href={`https://www.instagram.com/${socialNetworks.instagram}`}
                 passHref
                 prefetch={false}
               >
                 <Link target="_blank" color="inherit">
-                  Facebook
+                  Instagram
                 </Link>
               </NextLink>
             </Box>

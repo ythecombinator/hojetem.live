@@ -34,3 +34,8 @@ export const messages = {
   otherGenres: "Outros gêneros",
   copyright: "Hoje Tem Live © 2020.",
 };
+
+export const socialNetworks = {
+  twitter: "@hojetem.live",
+  instagram: "hojetem.live",
+};

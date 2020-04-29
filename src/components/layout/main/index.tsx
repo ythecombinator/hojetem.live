@@ -31,22 +31,22 @@ const Layout = (props: Props) => {
           name="twitter:card"
           content={image ? "summary_large_image" : "summary"}
         />
-        <meta name="twitter:site" content="@hero35official" />
+        <meta name="twitter:site" content="" />
         <meta name="twitter:title" content={headTitle} />
         <meta name="twitter:description" content={description} />
         <meta
           data-react-helmet="true"
           name="twitter-image"
-          content={image ? image : "https://hero35.com/banner.png"}
+          content={image ? image : "https://hojetem.live/banner.png"}
         />
         <meta name="og:image:type" content="image/jpeg" />
         <meta
           name="og:image"
-          content={image ? image : "https://hero35.com/banner.png"}
+          content={image ? image : "https://hojetem.live/banner.png"}
         />
         <meta
           name="og:image:secure_url"
-          content={image ? image : "https://hero35.com/banner.png"}
+          content={image ? image : "https://hojetem.live/banner.png"}
         />
       </Head>
       <Header />
