@@ -4,7 +4,7 @@ import {Genre} from 'schemas/api';
 
 import {getBaseData} from 'services/_base';
 
-const featured = ["axe", "forro", "mpb", "samba-pagode", "sertanejo"];
+const featured = ["axe", "forro", "mpb", "rock", "samba-pagode", "sertanejo"];
 
 export const getGenres = async () => {
   const allLives = await getBaseData();

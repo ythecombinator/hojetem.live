@@ -8,7 +8,7 @@ export const genres = [
   { id: "pop", title: "Pop", featured: false },
   { id: "rap", title: "Rap", featured: false },
   { id: "reggae", title: "Reggae", featured: false },
-  { id: "rock", title: "Rock", featured: false },
+  { id: "rock", title: "Rock", featured: true },
   { id: "samba-pagode", title: "Samba/Pagode", featured: true },
   { id: "sertanejo", title: "Sertanejo", featured: true },
 ];
