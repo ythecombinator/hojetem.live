@@ -13,11 +13,13 @@
     "@material-ui/styles": "^4.9.10",
     "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-css": "^1.0.1",
+    "chrome-aws-lambda": "2.1.1",
     "dayjs": "^1.8.25",
     "isomorphic-unfetch": "3.0.0",
     "next": "latest",
     "nprogress": "^0.2.0",
-    "puppeteer": "^3.0.1",
+    "puppeteer": "^2.1.1",
+    "puppeteer-core": "^2.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-youtube": "^7.11.2"
@@ -26,6 +28,7 @@
     "@types/node": "^12.12.21",
     "@types/nprogress": "^0.2.0",
     "@types/puppeteer": "^2.0.1",
+    "@types/puppeteer-core": "^2.0.0",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
     "typescript": "3.7.3"

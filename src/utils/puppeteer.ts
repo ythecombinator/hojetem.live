@@ -1,4 +1,4 @@
-import {Page, Response} from 'puppeteer';
+import {Page, Response} from 'puppeteer-core';
 
 import {Request as ApiRequest} from 'schemas/raw-api';
 

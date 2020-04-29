@@ -1,4 +1,5 @@
-import puppeteer from 'puppeteer';
+import chrome from 'chrome-aws-lambda';
+import puppeteer from 'puppeteer-core';
 
 import {filterRequests, interceptRequests, parseResponse} from 'utils/puppeteer';
 
@@ -56,7 +57,9 @@ const transformResponse = (rawResponse: Event[]) => {
 
 export const getBaseData = async () => {
   const browser = await puppeteer.launch({
-    headless: true,
+    args: chrome.args,
+    executablePath: await chrome.executablePath,
+    headless: chrome.headless,
   });
 
   const page = await browser.newPage();
