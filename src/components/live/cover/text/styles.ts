@@ -21,11 +21,6 @@ export const useStyles = makeStyles((theme: Theme) =>
       fontWeight: 500,
       marginTop: theme.spacing(4),
     },
-    hubLogo: {
-      maxWidth: theme.spacing(8),
-      maxHeight: theme.spacing(8),
-      marginRight: theme.spacing(1),
-    },
     hubTitle: { textTransform: "capitalize", fontWeight: 500 },
     text: {
       position: "relative",

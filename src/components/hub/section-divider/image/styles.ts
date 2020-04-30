@@ -13,19 +13,19 @@ export const useStyles = makeStyles((theme: Theme) =>
       backgroundPosition: "top right",
       backgroundRepeat: "no-repeat",
       [theme.breakpoints.up("sm")]: {
-        backgroundSize: "100vw"
+        backgroundSize: "100vw",
       },
       [theme.breakpoints.up("md")]: {
-        backgroundSize: "75vw"
+        backgroundSize: "75vw",
       },
       [theme.breakpoints.up("lg")]: {
-        backgroundSize: "60vw"
+        backgroundSize: "60vw",
       },
       [theme.breakpoints.up("xl")]: {
-        backgroundSize: "50vw"
-      }
+        backgroundSize: "50vw",
+      },
     },
-    shadowRL: {
+    shadow: {
       display: "block",
       height: "100%",
       position: "absolute",
@@ -38,18 +38,18 @@ export const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.up("md")]: {
         left: "25vw",
         background:
-          "linear-gradient(90deg, rgba(18,18,18,1) 0%,rgba(18,18,18,0.7) 40%, rgba(18,18,18,0) 70%)"
+          "linear-gradient(90deg, rgba(18,18,18,1) 0%,rgba(18,18,18,0.7) 40%, rgba(18,18,18,0) 70%)",
       },
       [theme.breakpoints.up("lg")]: {
         left: "40vw",
         background:
-          "linear-gradient(90deg, rgba(18,18,18,1) 0%, rgba(18,18,18,0) 50%)"
+          "linear-gradient(90deg, rgba(18,18,18,1) 0%, rgba(18,18,18,0) 50%)",
       },
       [theme.breakpoints.up("xl")]: {
         left: "50vw",
         background:
-          "linear-gradient(90deg, rgba(18,18,18,1) 0%, rgba(18,18,18,0) 40%)"
-      }
-    }
+          "linear-gradient(90deg, rgba(18,18,18,1) 0%, rgba(18,18,18,0) 40%)",
+      },
+    },
   })
 );

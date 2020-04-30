@@ -15,10 +15,10 @@ const HubSectionDividerImage = (props: Props) => {
     <div
       className={classes.imageContainer}
       style={{
-        backgroundImage: `url(${live.banner})`
+        backgroundImage: `url(${live.banner})`,
       }}
     >
-      <span className={classes.shadowRL}></span>
+      <span className={classes.shadow}></span>
     </div>
   );
 };

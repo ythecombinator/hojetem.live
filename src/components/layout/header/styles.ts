@@ -45,9 +45,6 @@ export const useStyles = makeStyles((theme: Theme) =>
         padding: theme.spacing(0, 2),
       },
     },
-    headerLinkActive: {
-      borderColor: "white",
-    },
     headerLinkIcon: {
       width: theme.spacing(3),
       height: theme.spacing(3),
@@ -63,20 +60,9 @@ export const useStyles = makeStyles((theme: Theme) =>
     logo: {
       minWidth: "100px",
     },
-    search: {
-      width: "100%",
-      margin: 0,
-      [theme.breakpoints.up("md")]: {
-        margin: theme.spacing(0, 0, 0, 2),
-        width: "250px",
-      },
-    },
     toolbar: {
       justifyContent: "space-between",
       alignItems: "center",
-    },
-    userPicture: {
-      marginLeft: theme.spacing(2),
     },
   })
 );

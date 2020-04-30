@@ -16,7 +16,7 @@ const HubSectionDivider = (props: Props) => {
   const classes = useStyles({});
 
   return (
-    <section className={classes.interstitial}>
+    <section className={classes.divider}>
       <HubSectionDividerImage live={live} />
       <HubSectionDividerText live={live} color={color} />
     </section>
