@@ -56,7 +56,7 @@ const Hub = (props: Props) => {
         })}
 
         <Box marginBottom={8} component="section">
-          <HubSectionDivider live={featured[1]} />
+          <HubSectionDivider live={featured[2]} />
         </Box>
 
         {thirdSection.map((genre) => {

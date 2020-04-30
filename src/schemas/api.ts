@@ -8,7 +8,6 @@ export interface Live {
   active: boolean;
   youtubeVideo: string;
   youtubeChannel: string;
-  instagram: string;
 }
 
 export interface Genre {

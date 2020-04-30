@@ -37,8 +37,6 @@ const transformResponse = (rawResponse: Event[]) => {
       youtube_video,
       youtube_channel,
       banner,
-      instagram,
-      active,
       categories,
     } = item;
 
@@ -48,11 +46,10 @@ const transformResponse = (rawResponse: Event[]) => {
       datetime,
       genres: categories.map(mapCategories),
       artists,
+      active: !!youtube_video,
       banner: getBannerUrl(youtube_video, banner),
-      active,
       youtubeVideo: youtube_video,
       youtubeChannel: youtube_channel,
-      instagram,
     };
 
     return newItem;

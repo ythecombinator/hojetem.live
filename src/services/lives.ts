@@ -1,4 +1,4 @@
-import {removeDuplicates} from 'utils/array';
+import {chunk, removeDuplicates} from 'utils/array';
 import {getRandomInt} from 'utils/number';
 
 import {Genre, GenreMapping, Live, LivesHub} from 'schemas/api';
@@ -9,13 +9,18 @@ import {getBaseData} from 'services/_base';
 
 const mapLives = (allLives: Live[], allGenres: Genre[]) => {
   // Featured Lives
-  const randomFeatured1 = getRandomInt(0, allLives.length / 2);
-  const randomFeatured2 = getRandomInt(allLives.length / 2, allLives.length);
+  const validLives = allLives.filter((live) => live.active);
+  const livesChunks = chunk(validLives, 10);
 
-  const featured1 = allLives[randomFeatured1];
-  const featured2 = allLives[randomFeatured2];
+  const randomFeatured1 = getRandomInt(0, livesChunks[0].length);
+  const randomFeatured2 = getRandomInt(0, livesChunks[1].length);
+  const randomFeatured3 = getRandomInt(0, livesChunks[2].length);
 
-  const featured = [featured1, featured2];
+  const featured1 = validLives[randomFeatured1];
+  const featured2 = validLives[randomFeatured2];
+  const featured3 = validLives[randomFeatured3];
+
+  const featured = [featured1, featured2, featured3];
 
   // Lives per genre
   const genres = allGenres.map((genre) => genre.id);
