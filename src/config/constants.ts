@@ -42,3 +42,9 @@ export const socialNetworks = {
   twitter: "_hojetemlive",
   instagram: "_hojetemlive",
 };
+
+export const defaultValues = {
+  title: "Hoje Tem Live",
+  description: "🎤 Assista a todas as lives num só canto⁣!",
+  image: "https://hojetem.live/banner.png",
+};

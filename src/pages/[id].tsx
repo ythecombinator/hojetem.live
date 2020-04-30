@@ -25,11 +25,7 @@ const LivePage: NextPage<Props> = (props) => {
   };
 
   return (
-    <Main
-      title={live.title}
-      description={`${live.title} • ${live.artists}`}
-      image={live.banner}
-    >
+    <Main title={live.title} description={live.title} image={live.banner}>
       {!playing ? (
         <LiveCover live={live} handlePlay={play} />
       ) : (

@@ -1,6 +1,6 @@
 import {Container, createStyles, makeStyles, Theme, Typography} from '@material-ui/core';
 
-import Layout from 'components/layout/main';
+import Main from 'components/layout/main';
 
 export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,7 +23,7 @@ const About = () => {
   const classes = useStyles({});
 
   return (
-    <Layout title="Sobre">
+    <Main title="Sobre">
       <Container className={classes.container}>
         <div className={classes.logoContaineer}>
           <img className={classes.logo} src="./logo-large.svg" />
@@ -79,7 +79,7 @@ const About = () => {
           friends through video calls. 😉
         </Typography>
       </Container>
-    </Layout>
+    </Main>
   );
 };
 

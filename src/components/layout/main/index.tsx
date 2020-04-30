@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Footer from 'components/layout/footer';
 import Header from 'components/layout/header';
 
+import {defaultValues} from 'config/constants';
+
 import {useStyles} from './styles';
 
 interface Props {
@@ -12,48 +14,42 @@ interface Props {
   image?: string;
 }
 
-const Layout = (props: Props) => {
-  const { children, title, description, image } = props;
-
+const Main = (props: Props) => {
   const classes = useStyles({});
 
-  const headTitle = title ? title : "Hoje Tem Live!";
+  const title = props.title
+    ? `${props.title} • ${defaultValues.title}`
+    : defaultValues.title;
+  const image = props.image ? props.image : defaultValues.image;
+  const description = props.description
+    ? props.description
+    : defaultValues.description;
 
   return (
     <>
       <Head>
-        <title>{headTitle}</title>
+        <title>{title}</title>
         <meta name="description" content={description} />
-        <meta property="og:title" content={headTitle} />
+        <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta
           name="twitter:card"
-          content={image ? "summary_large_image" : "summary"}
+          content={props.image ? "summary_large_image" : "summary"}
         />
         <meta name="twitter:site" content="" />
-        <meta name="twitter:title" content={headTitle} />
+        <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta
-          data-react-helmet="true"
-          name="twitter-image"
-          content={image ? image : "https://hojetem.live/banner.png"}
-        />
+        <meta data-react-helmet="true" name="twitter-image" content={image} />
         <meta name="og:image:type" content="image/jpeg" />
-        <meta
-          name="og:image"
-          content={image ? image : "https://hojetem.live/banner.png"}
-        />
-        <meta
-          name="og:image:secure_url"
-          content={image ? image : "https://hojetem.live/banner.png"}
-        />
+        <meta name="og:image" content={image} />
+        <meta name="og:image:secure_url" content={image} />
       </Head>
       <Header />
-      <main className={classes.main}>{children}</main>
+      <main className={classes.main}>{props.children}</main>
       <Footer />
     </>
   );
 };
 
-export default Layout;
+export default Main;
