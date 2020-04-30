@@ -1,4 +1,5 @@
 const path = require(`path`);
+const Dotenv = require("dotenv-webpack");
 
 const withCSS = require("@zeit/next-css");
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
@@ -10,24 +11,25 @@ module.exports = withBundleAnalyzer(
     bundleAnalyzerConfig: {
       server: {
         analyzerMode: "static",
-        reportFilename: "../../../../bundles/server.html"
+        reportFilename: "../../../../bundles/server.html",
       },
       browser: {
         analyzerMode: "static",
-        reportFilename: "../../../../bundles/client.html"
-      }
+        reportFilename: "../../../../bundles/client.html",
+      },
     },
     env: {
-      API_KEY: process.env.API_KEY,
-      STORAGE_PATH:
-        "https://firebasestorage.googleapis.com/v0/b/heroes-9c313.appspot.com/o/"
+      ENDPOINTS_BASE: process.env.ENDPOINTS_BASE,
+      ENDPOINTS_API: process.env.ENDPOINTS_API,
+      ENDPOINTS_ASSETS: process.env.ENDPOINTS_ASSETS,
     },
     compress: false,
     poweredByHeader: false,
     target: "serverless",
     webpack(config) {
+      config.plugins.push(new Dotenv({ silent: true }));
       config.resolve.modules.push(path.resolve("./src/"));
       return config;
-    }
+    },
   })
 );
