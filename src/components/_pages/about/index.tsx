@@ -1,25 +1,12 @@
-import {Container, createStyles, makeStyles, Theme, Typography} from '@material-ui/core';
+import {FunctionComponent} from 'react';
+
+import {Container, Typography} from '@material-ui/core';
 
 import Main from 'components/layout/main';
 
-export const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    container: {
-      marginTop: theme.spacing(2),
-    },
-    logoContaineer: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-    },
-    logo: {
-      width: "50%",
-    },
-  })
-);
+import {useStyles} from './styles';
 
-const About = () => {
+const AboutPage: FunctionComponent = () => {
   const classes = useStyles({});
 
   return (
@@ -83,4 +70,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutPage;
