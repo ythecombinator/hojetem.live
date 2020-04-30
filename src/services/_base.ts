@@ -19,6 +19,14 @@ const mapCategories = (category: Category) => {
   };
 };
 
+const getBannerUrl = (videoId: string, originalBanner: string) => {
+  const isValid = originalBanner === endpoints.assets;
+
+  return isValid
+    ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
+    : originalBanner;
+};
+
 const transformResponse = (rawResponse: Event[]) => {
   const response = rawResponse.map((item) => {
     const {
@@ -28,8 +36,8 @@ const transformResponse = (rawResponse: Event[]) => {
       artists,
       youtube_video,
       youtube_channel,
-      instagram,
       banner,
+      instagram,
       active,
       categories,
     } = item;
@@ -40,7 +48,7 @@ const transformResponse = (rawResponse: Event[]) => {
       datetime,
       genres: categories.map(mapCategories),
       artists,
-      banner,
+      banner: getBannerUrl(youtube_video, banner),
       active,
       youtubeVideo: youtube_video,
       youtubeChannel: youtube_channel,

@@ -16,6 +16,7 @@ export const genres = [
 export const endpoints = {
   base: "https://lives.mus.br",
   api: "https://api.lives.mus.br/lives",
+  assets: "https://assets.lives.mus.br/images/",
 };
 
 export const sizes = {
