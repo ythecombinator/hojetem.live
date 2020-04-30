@@ -1,7 +1,5 @@
-import {Box, Button, Link, Typography} from '@material-ui/core';
+import {Box, Button, Typography} from '@material-ui/core';
 import {PlayArrowSharp as PlayIcon} from '@material-ui/icons';
-
-import LinkPrefetch from 'components/link-prefetch';
 
 import {formatDate} from 'utils/date';
 
@@ -12,23 +10,13 @@ import {messages} from 'config/constants';
 import {useStyles} from './styles';
 
 interface Props {
-  color?: string;
-  logo?: string;
-  shouldLinkTitle?: boolean;
   title?: string;
   live: Live;
   handlePlay: (liveId: number) => () => void;
 }
 
 const LiveCoverText = (props: Props) => {
-  const {
-    color,
-    logo,
-    shouldLinkTitle = true,
-    live,
-    title,
-    handlePlay,
-  } = props;
+  const { live, title, handlePlay } = props;
 
   const classes = useStyles({});
 
@@ -38,33 +26,21 @@ const LiveCoverText = (props: Props) => {
     <div className={classes.text}>
       {title && (
         <Box display="flex" alignItems="center" marginBottom={2}>
-          {logo && <img src={logo} className={classes.hubLogo} />}
           <Typography variant="h4" className={classes.hubTitle}>
             {title}
           </Typography>
         </Box>
       )}
 
-      {shouldLinkTitle ? (
-        <LinkPrefetch href={`/live/[liveid]`} as={`/live/${live.id}`} passHref>
-          <Link
-            variant="h2"
-            className={classes.title}
-            style={color ? { color } : {}}
-          >
-            {live.title}
-          </Link>
-        </LinkPrefetch>
-      ) : (
-        <Typography variant="h2" className={classes.title}>
-          {live.title}
-        </Typography>
-      )}
+      <Typography variant="h2" className={classes.title}>
+        {live.title}
+      </Typography>
+
       <Typography
         variant="h4"
         component="p"
         className={classes.description}
-        color={shouldLinkTitle ? "textPrimary" : "textSecondary"}
+        color={"textPrimary"}
       >
         📅 {date}
       </Typography>
@@ -76,9 +52,20 @@ const LiveCoverText = (props: Props) => {
         classes={{ iconSizeLarge: classes.buttonIcon }}
         onClick={handlePlay(live.id)}
         startIcon={<PlayIcon />}
+        disabled={!live.active}
       >
         {messages.play}
       </Button>
+      {!live.active && (
+        <Typography
+          variant="h6"
+          component="p"
+          className={classes.warning}
+          color={"textSecondary"}
+        >
+          {messages.videoNotAvailable}
+        </Typography>
+      )}
     </div>
   );
 };

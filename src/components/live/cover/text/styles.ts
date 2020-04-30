@@ -6,21 +6,25 @@ export const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(2, 4),
       marginRight: theme.spacing(2),
       fontSize: theme.typography.fontSize * 1.7,
-      lineHeight: 1
+      lineHeight: 1,
     },
     buttonIcon: {
       "& > :first-child": {
-        fontSize: theme.typography.fontSize * 3
-      }
+        fontSize: theme.typography.fontSize * 3,
+      },
     },
     description: {
       fontWeight: 600,
-      marginBottom: theme.spacing(4)
+      marginBottom: theme.spacing(4),
+    },
+    warning: {
+      fontWeight: 500,
+      marginTop: theme.spacing(4),
     },
     hubLogo: {
       maxWidth: theme.spacing(8),
       maxHeight: theme.spacing(8),
-      marginRight: theme.spacing(1)
+      marginRight: theme.spacing(1),
     },
     hubTitle: { textTransform: "capitalize", fontWeight: 500 },
     text: {
@@ -29,17 +33,17 @@ export const useStyles = makeStyles((theme: Theme) =>
       maxWidth: "48rem",
       zIndex: 1,
       [theme.breakpoints.up("sm")]: {
-        margin: theme.spacing(0, 3)
+        margin: theme.spacing(0, 3),
       },
       [theme.breakpoints.up("md")]: {
-        margin: theme.spacing(0, 4)
-      }
+        margin: theme.spacing(0, 4),
+      },
     },
     title: {
       fontWeight: 800,
       paddingBottom: theme.spacing(2),
       display: "inline-block",
-      lineHeight: 1
-    }
+      lineHeight: 1,
+    },
   })
 );

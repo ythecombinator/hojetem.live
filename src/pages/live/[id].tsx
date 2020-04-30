@@ -31,7 +31,7 @@ const LivePage: NextPage<Props> = (props) => {
       image={live.banner}
     >
       {!playing ? (
-        <LiveCover live={live} shouldLinkTitle={false} handlePlay={play} />
+        <LiveCover live={live} handlePlay={play} />
       ) : (
         <LiveVideo videoid={live.youtubeVideo} />
       )}

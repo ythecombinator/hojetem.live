@@ -30,6 +30,8 @@ export const routes = {
 
 export const messages = {
   play: "Assistir",
+  videoNotAvailable:
+    "Infelizmente, esta live ainda não está disponível no YouTube 😞",
   allGenres: "Todos os Gêneros",
   highlightedGenres: "Em destaque",
   otherGenres: "Outros gêneros",

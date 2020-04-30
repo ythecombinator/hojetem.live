@@ -10,37 +10,20 @@ import {Live} from 'schemas/api';
 import {useStyles} from './styles';
 
 interface Props {
-  color?: string;
-  logo?: string;
-  shouldLinkTitle?: boolean;
   title?: string;
   live: Live;
   handlePlay?: (liveId: number) => () => void;
 }
 
 const LiveCover: FunctionComponent<Props> = (props) => {
-  const {
-    color,
-    logo,
-    shouldLinkTitle = true,
-    live,
-    title,
-    handlePlay,
-  } = props;
+  const { live, title, handlePlay } = props;
 
   const classes = useStyles({});
 
   return (
     <header className={classes.header}>
       <LiveCoverImage live={live} />
-      <LiveCoverText
-        live={live}
-        logo={logo}
-        title={title}
-        color={color}
-        shouldLinkTitle={shouldLinkTitle}
-        handlePlay={handlePlay!}
-      />
+      <LiveCoverText live={live} title={title} handlePlay={handlePlay!} />
     </header>
   );
 };
