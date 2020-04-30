@@ -1,8 +1,25 @@
 import {Container, Link, Typography} from '@material-ui/core';
+import {createStyles, makeStyles, Theme} from '@material-ui/core';
 
 import Layout from 'components/layout/main';
 
-import {useStyles} from './styles';
+export const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    container: {
+      marginTop: theme.spacing(2),
+      maxWidth: "75vw",
+    },
+    logoContaineer: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    logo: {
+      width: "50%",
+    },
+  })
+);
 
 const Author = () => {
   return (
