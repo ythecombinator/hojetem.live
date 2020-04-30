@@ -1,3 +1,5 @@
+import {FunctionComponent} from 'react';
+
 import {Box} from '@material-ui/core';
 
 import LiveGroup from 'components/live/group';
@@ -10,7 +12,7 @@ interface Props {
   content: Live[];
 }
 
-const HubSection = (props: Props) => {
+const HubSection: FunctionComponent<Props> = (props) => {
   const { title, slug, content } = props;
 
   return (

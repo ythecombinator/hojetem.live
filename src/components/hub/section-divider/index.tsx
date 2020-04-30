@@ -1,3 +1,5 @@
+import {FunctionComponent} from 'react';
+
 import HubSectionDividerImage from 'components/hub/section-divider/image';
 import HubSectionDividerText from 'components/hub/section-divider/text';
 
@@ -10,7 +12,7 @@ interface Props {
   color?: string;
 }
 
-const HubSectionDivider = (props: Props) => {
+const HubSectionDivider: FunctionComponent<Props> = (props) => {
   const { live, color } = props;
 
   const classes = useStyles({});

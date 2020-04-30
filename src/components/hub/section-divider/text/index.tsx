@@ -1,3 +1,5 @@
+import {FunctionComponent} from 'react';
+
 import {Button, Link, Typography} from '@material-ui/core';
 import {PlayArrowSharp as PlayIcon} from '@material-ui/icons';
 import Router from 'next/router';
@@ -15,7 +17,7 @@ interface Props {
   color?: string;
 }
 
-const HubSectionDividerText = (props: Props) => {
+const HubSectionDividerText: FunctionComponent<Props> = (props) => {
   const { live, color } = props;
 
   const classes = useStyles({});

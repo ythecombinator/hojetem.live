@@ -1,3 +1,5 @@
+import {FunctionComponent} from 'react';
+
 import {Live} from 'schemas/api';
 
 import {useStyles} from './styles';
@@ -6,7 +8,7 @@ interface Props {
   live: Live;
 }
 
-const HubSectionDividerImage = (props: Props) => {
+const HubSectionDividerImage: FunctionComponent<Props> = (props) => {
   const { live } = props;
 
   const classes = useStyles({});

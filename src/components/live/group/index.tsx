@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {FunctionComponent, useEffect, useState} from 'react';
 
 import {Grid, Typography} from '@material-ui/core';
 
@@ -16,7 +16,7 @@ interface Props {
 
 // Helper components
 
-const LiveGroupTitle = (props: Props) => {
+const LiveGroupTitle: FunctionComponent<Props> = (props) => {
   const { title, slug } = props;
 
   const classes = useStyles({});
@@ -31,7 +31,7 @@ const LiveGroupTitle = (props: Props) => {
 
 // Main component
 
-const LiveGroup = (props: Props) => {
+const LiveGroup: FunctionComponent<Props> = (props) => {
   const { title, slug, content } = props;
 
   const classes = useStyles({});

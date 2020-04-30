@@ -1,3 +1,5 @@
+import {FunctionComponent} from 'react';
+
 import {Box} from '@material-ui/core';
 import YouTube, {Options} from 'react-youtube';
 
@@ -7,7 +9,7 @@ interface Props {
   videoid: string;
 }
 
-const LiveVideo = (props: Props) => {
+const LiveVideo: FunctionComponent<Props> = (props) => {
   const { videoid } = props;
 
   const classes = useStyles({});

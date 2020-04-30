@@ -1,3 +1,5 @@
+import {FunctionComponent} from 'react';
+
 import {
   Box,
   Card,
@@ -22,7 +24,7 @@ interface Props {
 
 // Helper components
 
-const LiveCardHeader = (props: Props) => {
+const LiveCardHeader: FunctionComponent<Props> = (props) => {
   const { live } = props;
 
   const classes = useStyles({});
@@ -36,7 +38,7 @@ const LiveCardHeader = (props: Props) => {
   );
 };
 
-const LiveCardMedia = (props: Props) => {
+const LiveCardMedia: FunctionComponent<Props> = (props) => {
   const { live } = props;
 
   const classes = useStyles({});
@@ -54,7 +56,7 @@ const LiveCardMedia = (props: Props) => {
   );
 };
 
-const LiveCardInfo = (props: Props) => {
+const LiveCardInfo: FunctionComponent<Props> = (props) => {
   const { live } = props;
 
   const classes = useStyles({});
@@ -80,7 +82,7 @@ const LiveCardInfo = (props: Props) => {
 
 // Main component
 
-const LiveCard = (props: Props) => {
+const LiveCard: FunctionComponent<Props> = (props) => {
   const { live } = props;
 
   const classes = useStyles({});

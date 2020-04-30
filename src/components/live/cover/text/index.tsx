@@ -1,3 +1,5 @@
+import {FunctionComponent} from 'react';
+
 import {Box, Button, Typography} from '@material-ui/core';
 import {PlayArrowSharp as PlayIcon} from '@material-ui/icons';
 
@@ -15,7 +17,7 @@ interface Props {
   handlePlay: (liveId: number) => () => void;
 }
 
-const LiveCoverText = (props: Props) => {
+const LiveCoverText: FunctionComponent<Props> = (props) => {
   const { live, title, handlePlay } = props;
 
   const classes = useStyles({});

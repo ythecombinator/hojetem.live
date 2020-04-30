@@ -1,3 +1,5 @@
+import {FunctionComponent} from 'react';
+
 import Head from 'next/head';
 
 import Footer from 'components/layout/footer';
@@ -14,7 +16,7 @@ interface Props {
   image?: string;
 }
 
-const Main = (props: Props) => {
+const Main: FunctionComponent<Props> = (props) => {
   const classes = useStyles({});
 
   const title = props.title

@@ -1,4 +1,4 @@
-import {useCallback, useState} from 'react';
+import {FunctionComponent, useCallback, useState} from 'react';
 
 import {Button, ListItemIcon, ListItemText, Menu, MenuItem} from '@material-ui/core';
 import {ArrowDropDown as GenresButtonIcon} from '@material-ui/icons/';
@@ -9,7 +9,7 @@ import {genres, messages} from 'config/constants';
 
 import {useStyles} from './styles';
 
-const GenresMenu = () => {
+const GenresMenu: FunctionComponent = () => {
   const classes = useStyles({});
 
   const { navigateToGenre } = useNavigation();

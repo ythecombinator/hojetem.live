@@ -1,4 +1,4 @@
-import {useCallback} from 'react';
+import {FunctionComponent, useCallback} from 'react';
 
 import {
   Divider,
@@ -25,7 +25,7 @@ interface GenreLinkProps {
   genre: Genre;
 }
 
-const GenreLink = (props: GenreLinkProps) => {
+const GenreLink: FunctionComponent<GenreLinkProps> = (props) => {
   const { genre } = props;
 
   const classes = useStyles({});
@@ -62,12 +62,11 @@ const GenreLink = (props: GenreLinkProps) => {
 };
 
 // Main component
-
 interface Props {
   className?: string;
 }
 
-const Sidebar = (props: Props) => {
+const Sidebar: FunctionComponent<Props> = (props) => {
   const { className } = props;
 
   const classes = useStyles({});

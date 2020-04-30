@@ -1,3 +1,5 @@
+import {FunctionComponent} from 'react';
+
 import {Link, Typography} from '@material-ui/core';
 
 import {formatDate} from 'utils/date';
@@ -10,7 +12,7 @@ interface Props {
   live: Live;
 }
 
-const LiveInfo = (props: Props) => {
+const LiveInfo: FunctionComponent<Props> = (props) => {
   const { live } = props;
 
   const classes = useStyles({});

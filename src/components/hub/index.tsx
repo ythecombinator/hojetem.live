@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FunctionComponent} from 'react';
 
 import {Box} from '@material-ui/core';
 
@@ -15,7 +15,7 @@ interface Props {
   genresList: Genre[];
 }
 
-const Hub = (props: Props) => {
+const Hub: FunctionComponent<Props> = (props) => {
   const { livesHub, genresList } = props;
   const { featured, genres } = livesHub;
 
