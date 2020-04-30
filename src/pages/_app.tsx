@@ -7,6 +7,8 @@ import Head from 'next/head';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 
+import {trackPageview} from 'utils/analytics';
+
 import 'styles/global.css';
 import theme from 'styles/theme';
 
@@ -28,7 +30,10 @@ Router.events.on("routeChangeError", () => {
   NProgress.done();
 });
 
-Router.events.on("routeChangeComplete", () => {
+Router.events.on("routeChangeComplete", (url: string) => {
+  if (window.location.hostname !== "localhost") {
+    trackPageview(url);
+  }
   doneLoading = true;
   NProgress.done();
 });

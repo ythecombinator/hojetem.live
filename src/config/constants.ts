@@ -1,3 +1,8 @@
+export const sizes = {
+  appBarHeight: "65px",
+  livePagePrimaryContentHeight: "175px",
+};
+
 export const genres = [
   { id: "axe", title: "Axé", featured: true },
   { id: "dj", title: "DJ", featured: false },
@@ -13,21 +18,6 @@ export const genres = [
   { id: "sertanejo", title: "Sertanejo", featured: true },
 ];
 
-export const endpoints = {
-  base: process.env.ENDPOINTS_BASE!,
-  api: process.env.ENDPOINTS_API!,
-  assets: process.env.ENDPOINTS_ASSETS!,
-};
-
-export const sizes = {
-  appBarHeight: "65px",
-  livePagePrimaryContentHeight: "175px",
-};
-
-export const routes = {
-  home: "/",
-};
-
 export const messages = {
   play: "Assistir",
   videoNotAvailable:
@@ -38,13 +28,27 @@ export const messages = {
   copyright: "Hoje Tem Live © 2020.",
 };
 
+export const defaultValues = {
+  title: "Hoje Tem Live",
+  description: "🎤 Assista a todas as lives num só canto⁣!",
+  image: "https://hojetem.live/banner.png",
+};
+
 export const socialNetworks = {
   twitter: "_hojetemlive",
   instagram: "_hojetemlive",
 };
 
-export const defaultValues = {
-  title: "Hoje Tem Live",
-  description: "🎤 Assista a todas as lives num só canto⁣!",
-  image: "https://hojetem.live/banner.png",
+export const endpoints = {
+  base: process.env.ENDPOINTS_BASE!,
+  api: process.env.ENDPOINTS_API!,
+  assets: process.env.ENDPOINTS_ASSETS!,
+};
+
+export const routes = {
+  home: "/",
+};
+
+export const analytics = {
+  trackingId: "UA-58120604-11",
 };

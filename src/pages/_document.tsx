@@ -5,6 +5,8 @@ import Document, {Head, Main, NextScript} from 'next/document';
 
 import theme from 'styles/theme';
 
+import {analytics} from 'config/constants';
+
 class NextDocument extends Document {
   render() {
     return (
@@ -90,6 +92,22 @@ class NextDocument extends Document {
           />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content={theme.palette.background.default} />
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${analytics.trackingId}`}
+          />
+          <script
+            async
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', ${analytics.trackingId});
+          `,
+            }}
+          />
         </Head>
         <body>
           <Main />
