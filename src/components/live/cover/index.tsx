@@ -30,7 +30,7 @@ const LiveCover: FunctionComponent<Props> = (props) => {
 
 LiveCover.defaultProps = {
   handlePlay: (liveId: number) => () => {
-    Router.push(`/live/[liveid]`, `/live/${liveId}`);
+    Router.push(`/[liveid]`, `/${liveId}`);
   },
 };
 

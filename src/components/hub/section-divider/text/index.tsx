@@ -21,12 +21,12 @@ const HubSectionDividerText = (props: Props) => {
   const classes = useStyles({});
 
   const handlePlay = () => {
-    Router.push(`/live/[liveid]`, `/live/${live.id}`);
+    Router.push(`/[liveid]`, `/${live.id}`);
   };
 
   return (
     <div className={classes.text}>
-      <LinkPrefetch href={`/live/[liveid]`} as={`/live/${live.id}`} passHref>
+      <LinkPrefetch href={`/[liveid]`} as={`/${live.id}`} passHref>
         <Link
           variant="h3"
           className={classes.title}
