@@ -39,6 +39,6 @@ export const messages = {
 };
 
 export const socialNetworks = {
-  twitter: "@hojetem.live",
-  instagram: "hojetem.live",
+  twitter: "_hojetemlive",
+  instagram: "_hojetemlive",
 };
