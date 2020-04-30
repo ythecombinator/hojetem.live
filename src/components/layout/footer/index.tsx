@@ -43,6 +43,11 @@ const Footer = () => {
               </NextLink>
             </Box>
           </Grid>
+          <Grid item>
+            <NextLink href="/sobre" as="/sobre" passHref prefetch={false}>
+              <Link color="inherit">Sobre</Link>
+            </NextLink>
+          </Grid>
         </Grid>
       </Typography>
     </Container>
