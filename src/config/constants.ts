@@ -28,6 +28,14 @@ export const messages = {
   copyright: "Hoje Tem Live © 2020.",
 };
 
+export const errorStatus = [
+  { image: 1, message: "Aff 😭" },
+  { image: 2, message: "Ooops 😅" },
+  { image: 3, message: "Tivemos um probleminha aqui 😅" },
+  { image: 4, message: "Em breve você poderá curtir essa live 😊" },
+  { image: 5, message: "Volte daqui alguns segundos, por favor  🙏" },
+];
+
 export const defaultValues = {
   title: "Hoje Tem Live",
   description: "🎤 Assista a todas as lives num só canto⁣!",
