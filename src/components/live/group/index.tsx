@@ -61,7 +61,7 @@ const LiveGroup: FunctionComponent<Props> = (props) => {
         {content.map((live) => (
           <Grid
             className={classes.groupItem}
-            key={live.id}
+            key={live.slug}
             item
             component="article"
           >

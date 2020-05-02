@@ -44,7 +44,7 @@ const LiveCardMedia: FunctionComponent<Props> = (props) => {
   const classes = useStyles({});
 
   return (
-    <LinkPrefetch href={`/[liveid]`} as={`/${live.id}`}>
+    <LinkPrefetch href={`/[liveid]`} as={`/${live.slug}`}>
       <a className={classes.link}>
         <CardActionArea>
           <CardMedia className={classes.media} image={live.banner}>

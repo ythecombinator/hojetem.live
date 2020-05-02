@@ -12,7 +12,7 @@ import {useStyles} from './styles';
 interface Props {
   title?: string;
   live: Live;
-  handlePlay?: (liveId: number) => () => void;
+  handlePlay?: (liveId: string) => () => void;
 }
 
 const LiveCover: FunctionComponent<Props> = (props) => {
@@ -29,7 +29,7 @@ const LiveCover: FunctionComponent<Props> = (props) => {
 };
 
 LiveCover.defaultProps = {
-  handlePlay: (liveId: number) => () => {
+  handlePlay: (liveId: string) => () => {
     Router.push(`/[liveid]`, `/${liveId}`);
   },
 };

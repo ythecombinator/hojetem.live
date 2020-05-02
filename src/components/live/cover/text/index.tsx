@@ -14,7 +14,7 @@ import {useStyles} from './styles';
 interface Props {
   title?: string;
   live: Live;
-  handlePlay: (liveId: number) => () => void;
+  handlePlay: (liveId: string) => () => void;
 }
 
 const LiveCoverText: FunctionComponent<Props> = (props) => {
@@ -52,7 +52,7 @@ const LiveCoverText: FunctionComponent<Props> = (props) => {
         variant="contained"
         className={classes.button}
         classes={{ iconSizeLarge: classes.buttonIcon }}
-        onClick={handlePlay(live.id)}
+        onClick={handlePlay(live.slug)}
         startIcon={<PlayIcon />}
         disabled={!live.active}
       >

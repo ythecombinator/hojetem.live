@@ -1,6 +1,7 @@
 export interface Live {
   id: number;
   title: string;
+  slug: string;
   datetime: string;
   genres: Genre[];
   artists: string;

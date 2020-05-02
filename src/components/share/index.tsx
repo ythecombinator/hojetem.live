@@ -18,7 +18,7 @@ interface Props {
 const Share: FunctionComponent<Props> = (props) => {
   const { className, live } = props;
 
-  const link = `${urls.main}/${live.id}`;
+  const link = `${urls.main}/${live.slug}`;
 
   const { isSupported, share } = useWebShare();
 
