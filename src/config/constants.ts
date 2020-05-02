@@ -34,6 +34,10 @@ export const messages = {
     telegram: "Oi, dá uma olhada nessa live! 😍",
     mail: "Oi, dá uma olhada nessa live! 😍",
   },
+  donate: {
+    callForAction: "CLIQUE AQUI PARA DOAR",
+    message: "Quer ajudar a acabar com a fome no Brasil?",
+  },
 };
 
 export const errorStatus = [
@@ -61,6 +65,11 @@ export const endpoints = {
   assets: process.env.ENDPOINTS_ASSETS!,
 };
 
+export const urls = {
+  main: "https://hojetem.live",
+  donate: "https://www.fomedemusica.com/",
+};
+
 export const routes = {
   home: "/",
 };
@@ -68,5 +77,3 @@ export const routes = {
 export const analytics = {
   trackingId: "UA-58120604-11",
 };
-
-export const domain = "https://hojetem.live";

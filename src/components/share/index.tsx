@@ -8,7 +8,7 @@ import {useWebShare} from 'utils/dom';
 
 import {Live} from 'schemas/api';
 
-import {domain, messages} from 'config/constants';
+import {messages, urls} from 'config/constants';
 
 interface Props {
   className?: string;
@@ -18,7 +18,7 @@ interface Props {
 const Share: FunctionComponent<Props> = (props) => {
   const { className, live } = props;
 
-  const link = `${domain}/${live.id}`;
+  const link = `${urls.main}/${live.id}`;
 
   const { isSupported, share } = useWebShare();
 

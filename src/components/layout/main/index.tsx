@@ -2,6 +2,7 @@ import {FunctionComponent} from 'react';
 
 import Head from 'next/head';
 
+import Donate from 'components/donate';
 import Footer from 'components/layout/footer';
 import Header from 'components/layout/header';
 
@@ -48,7 +49,10 @@ const Main: FunctionComponent<Props> = (props) => {
         <meta name="og:image:secure_url" content={image} />
       </Head>
       <Header />
-      <main className={classes.main}>{props.children}</main>
+      <main className={classes.main}>
+        {props.children}
+        <Donate />
+      </main>
       <Footer />
     </>
   );
