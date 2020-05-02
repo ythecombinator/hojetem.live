@@ -60,9 +60,10 @@ export const socialNetworks = {
 };
 
 export const endpoints = {
-  base: process.env.ENDPOINTS_BASE!,
-  api: process.env.ENDPOINTS_API!,
-  assets: process.env.ENDPOINTS_ASSETS!,
+  base: process.env.API_BASE!,
+  hub: "getHub",
+  live: "getLive",
+  genres: "getGenres",
 };
 
 export const urls = {

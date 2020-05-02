@@ -37,6 +37,12 @@ yarn
 npm install
 ```
 
+Create a `.env` file in the project root containing the API endpoint:
+
+```sh
+API_BASE=""
+```
+
 Start the development server:
 
 ```sh

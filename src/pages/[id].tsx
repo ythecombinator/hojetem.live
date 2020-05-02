@@ -1,5 +1,6 @@
 import {useState} from 'react';
 
+import fetch from 'isomorphic-unfetch';
 import {NextPage, NextPageContext} from 'next';
 
 import Main from 'components/layout/main';
@@ -9,7 +10,7 @@ import LiveVideo from 'components/live/video';
 
 import {Live} from 'schemas/api';
 
-import {getLive} from 'services/lives';
+import {endpoints} from 'config/constants';
 
 interface Props {
   live: Live;
@@ -42,11 +43,13 @@ const LivePage: NextPage<Props> = (props) => {
 
 export async function getServerSideProps(context: NextPageContext) {
   const id = context.query.id as string;
+  const { base, live } = endpoints;
 
-  const live = await getLive(id);
+  const liveResponse = await fetch(`${base}/${live}?id=${id}`);
+  const liveData = await liveResponse.json();
 
   return {
-    props: { live },
+    props: { live: liveData },
   };
 }
 

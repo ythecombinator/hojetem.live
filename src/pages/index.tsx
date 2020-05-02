@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-unfetch';
 import {NextPage} from 'next';
 
 import Hub from 'components/hub';
@@ -5,8 +6,7 @@ import Main from 'components/layout/main';
 
 import {Genre, LivesHub} from 'schemas/api';
 
-import {getGenres} from 'services/genres';
-import {getLivesHub} from 'services/lives';
+import {endpoints} from 'config/constants';
 
 interface Props {
   livesHub: LivesHub;
@@ -24,10 +24,17 @@ const Home: NextPage<Props> = (props) => {
 };
 
 export async function getServerSideProps() {
-  const livesHub = await getLivesHub();
-  const genresList = await getGenres();
+  const { base, hub, genres } = endpoints;
 
-  return { props: { livesHub, genresList } };
+  // Lives Hub
+  const livesHubResponse = await fetch(`${base}/${hub}`);
+  const livesHubData = await livesHubResponse.json();
+
+  // Genres
+  const genresListResponse = await fetch(`${base}/${genres}`);
+  const genresListData = await genresListResponse.json();
+
+  return { props: { livesHub: livesHubData, genresList: genresListData } };
 }
 
 export default Home;
