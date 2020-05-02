@@ -1,3 +1,49 @@
+import {useEffect, useState} from 'react';
+
+// Helpers
+
+const getUrl = (url?: string): string => {
+  if (!!url) {
+    return url;
+  } else {
+    const canonicalEl = document.querySelector(
+      "link[rel=canonical]"
+    ) as HTMLLinkElement;
+    return canonicalEl ? canonicalEl.href : window.location.href;
+  }
+};
+
+const shareContent = (onSuccess: () => void, onError: () => void) => {
+  return function (config: Partial<ShareConfig>) {
+    const url = getUrl(config.url);
+    const title = config.title || document.title;
+    const text = config.text;
+    navigator.share({ text, title, url }).then(onSuccess).catch(onError);
+  };
+};
+
+// Exported
+
+export const useWebShare = (onSuccess = () => {}, onError = () => {}) => {
+  const [loading, setLoading] = useState(true);
+  const [isSupported, setSupport] = useState(false);
+
+  useEffect(() => {
+    if (!!navigator.share) {
+      setSupport(true);
+    } else {
+      setSupport(false);
+    }
+    setLoading(false);
+  }, [onSuccess, onError]);
+
+  return {
+    loading,
+    isSupported,
+    share: shareContent(onSuccess, onError),
+  };
+};
+
 export const useSmoothScroll = () => {
   let timer = {} as NodeJS.Timeout;
 

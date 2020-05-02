@@ -2,6 +2,8 @@ import {FunctionComponent} from 'react';
 
 import {Link, Typography} from '@material-ui/core';
 
+import Share from 'components/share';
+
 import {formatDate} from 'utils/date';
 
 import {Live} from 'schemas/api';
@@ -21,10 +23,11 @@ const LiveInfo: FunctionComponent<Props> = (props) => {
 
   return (
     <section className={classes.info}>
-      <header>
+      <header className={classes.header}>
         <Typography variant="h4" component="h1">
           {live.title}
         </Typography>
+        <Share className={classes.share} live={live} />
       </header>
 
       <Typography variant="h5" component="p" color="textSecondary" paragraph>

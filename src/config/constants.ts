@@ -20,12 +20,20 @@ export const genres = [
 
 export const messages = {
   play: "Assistir",
+  share: "Compartilhar",
   videoNotAvailable:
     "Infelizmente, esta live ainda não está disponível no YouTube 😞",
   allGenres: "Todos os Gêneros",
   highlightedGenres: "Em destaque",
   otherGenres: "Outros gêneros",
   copyright: "Hoje Tem Live © 2020.",
+  shareMessage: {
+    generic: "Tô amando essa live! 😍",
+    twitter: "Tô amando essa live! 😍",
+    whatsapp: "Oi, dá uma olhada nessa live! 😍",
+    telegram: "Oi, dá uma olhada nessa live! 😍",
+    mail: "Oi, dá uma olhada nessa live! 😍",
+  },
 };
 
 export const errorStatus = [
@@ -60,3 +68,5 @@ export const routes = {
 export const analytics = {
   trackingId: "UA-58120604-11",
 };
+
+export const domain = "https://hojetem.live";

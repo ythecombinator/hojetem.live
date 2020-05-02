@@ -2,6 +2,13 @@ import {createStyles, makeStyles, Theme} from '@material-ui/core';
 
 export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    header: {
+      display: "flex",
+      alignItems: "center",
+    },
+    share: {
+      margin: theme.spacing(0, 2),
+    },
     info: {
       display: "block",
       margin: theme.spacing(0, 2),
