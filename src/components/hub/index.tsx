@@ -30,14 +30,16 @@ const Hub: FunctionComponent<Props> = (props) => {
 
       <main style={{ position: "relative" }}>
         {firstSection.map((genre) => {
-          return (
-            <HubSection
-              key={genre.id}
-              title={genre.title}
-              slug={genre.id}
-              content={genres[genre.id]}
-            />
-          );
+          if (genres[genre.id]) {
+            return (
+              <HubSection
+                key={genre.id}
+                title={genre.title}
+                slug={genre.id}
+                content={genres[genre.id]}
+              />
+            );
+          }
         })}
 
         <Box marginBottom={8} component="section">
@@ -45,14 +47,16 @@ const Hub: FunctionComponent<Props> = (props) => {
         </Box>
 
         {secondSection.map((genre) => {
-          return (
-            <HubSection
-              key={genre.id}
-              title={genre.title}
-              slug={genre.id}
-              content={genres[genre.id]}
-            />
-          );
+          if (genres[genre.id]) {
+            return (
+              <HubSection
+                key={genre.id}
+                title={genre.title}
+                slug={genre.id}
+                content={genres[genre.id]}
+              />
+            );
+          }
         })}
 
         <Box marginBottom={8} component="section">
@@ -60,14 +64,16 @@ const Hub: FunctionComponent<Props> = (props) => {
         </Box>
 
         {thirdSection.map((genre) => {
-          return (
-            <HubSection
-              key={genre.id}
-              title={genre.title}
-              slug={genre.id}
-              content={genres[genre.id]}
-            />
-          );
+          if (genres[genre.id]) {
+            return (
+              <HubSection
+                key={genre.id}
+                title={genre.title}
+                slug={genre.id}
+                content={genres[genre.id]}
+              />
+            );
+          }
         })}
       </main>
     </>
